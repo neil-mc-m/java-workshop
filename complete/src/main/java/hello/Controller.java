@@ -18,5 +18,9 @@ public class Controller {
         return repository.findAll();
     }
 
+    @RequestMapping("/customers/{firstName}")
+    public List<Customers> getCustomer(@PathVariable("firstName") String firstName){
+        return repository.findByFirstName(firstName);
+    }
 }
 
