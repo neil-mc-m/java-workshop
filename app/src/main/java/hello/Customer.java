@@ -3,8 +3,21 @@ package hello;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Customers")
-public class Customers {
+@Document(collection = "customers")
+public class Customer {
+    @Id
+    public String id;
+    public String firstName;
+    public String lastName;
+
+    public Customer() {
+    }
+
+    public Customer(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public String getId() {
         return id;
     }
@@ -26,19 +39,6 @@ public class Customers {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    @Id
-    public String id;
-
-    public String firstName;
-    public String lastName;
-
-    public Customers() {}
-
-    public Customers(String firstName, String lastName) {
-        this.firstName = firstName;
         this.lastName = lastName;
     }
 

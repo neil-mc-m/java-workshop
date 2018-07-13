@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface CustomerRepository extends MongoRepository<Customers, String> {
+public interface CustomerRepository extends MongoRepository<Customer, String> {
 
-    public List<Customers> findAll();
-    public List<Customers> findByFirstName(String firstName);
+    public List<Customer> findAll();
+    public List<Customer> findByFirstName(String firstName);
 }

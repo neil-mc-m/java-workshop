@@ -14,12 +14,13 @@ public class Controller {
     private CustomerRepository repository;
 
     @RequestMapping("/customers")
-    public List<Customers> getAll() {
+    public List<Customer> getAll() {
+
         return repository.findAll();
     }
 
     @RequestMapping("/customers/{firstName}")
-    public List<Customers> getCustomer(@PathVariable("firstName") String firstName){
+    public List<Customer> getCustomer(@PathVariable("firstName") String firstName){
         return repository.findByFirstName(firstName);
     }
 }
